@@ -51,7 +51,7 @@ const executarQ2 = () => {
     }
 
     const listaFormatada = gerarResultadosMultiplicacao(numerosPares, 5);
-    renderizarListaQ2(listaFormatada);
+    renderizarLista(tagListaQ2, listaFormatada);
 }
 
 // Q3
@@ -154,21 +154,13 @@ const gerarResultadosMultiplicacao = (listaNumeros, multiplicador) => {
     return listaFormatada;
 }
 
-const renderizarListaQ1 = (listaFormatada) => {
-    limparListaHTML(tagListaQ1);
 
-    for(let i = 0; i < listaFormatada.length; i++) {
-        const li = document.createElement("li");
-        li.textContent = listaFormatada[i]; 
-        tagListaQ1.appendChild(li);
-    }
-}
 
 const atualizarInterfaceQ1 = (lista) =>  {
     const temItens = lista.length > 0;
     definirVisibilidade(tagListaVaziaQ1, !temItens);
     definirVisibilidade(tagBotaoResetarQ1, temItens);
-    renderizarListaQ1(lista);
+    renderizarLista(tagListaQ1, lista);
 }
 
 const resetarListaQ1 = () => {
@@ -188,13 +180,15 @@ function filtrarPares(lista) {
     return pares;
 }
 
-const renderizarListaQ2 = (lista) => {
-    limparListaHTML(tagListaQ2);
 
-    for(let i = 0; i < lista.length; i++) {
+
+const renderizarLista = (elementoLista, itens) => {
+    limparListaHTML(elementoLista);
+
+    for(let i = 0; i < itens.length; i++) {
         const li = document.createElement("li");
-        li.textContent = lista[i]; 
-        tagListaQ2.appendChild(li);
+        li.textContent = itens[i]; 
+        elementoLista.appendChild(li);
     }
 }
 
@@ -244,4 +238,3 @@ tagBotaoExecutarQ3.addEventListener("click", executarQ3);
 tagBotaoResetarQ1.addEventListener("click", resetarListaQ1);
 tagBotaoExecutarQ4.addEventListener("click", executarQ4);
 tagBotaoExecutarQ5.addEventListener("click", executarQ5);
-
