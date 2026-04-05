@@ -1,4 +1,4 @@
-import { tagMsgQ3 } from "../dom/elementos.js";
+import { tagMsgQ4 } from "../dom/elementos.js";
 
 import { nomeEstaPresenteNaLista } from "../utils.js";
 
@@ -12,5 +12,5 @@ export const executarQ4 = () => {
         return;
     }
 
-    tagMsgQ3.innerText = `Nome ${nome} encontrado com sucesso`;
+    tagMsgQ4.innerText = `Nome ${nome} encontrado com sucesso`;
 }
