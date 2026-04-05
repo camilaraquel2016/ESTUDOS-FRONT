@@ -1,0 +1,12 @@
+export const tagListaVaziaQ1 = document.getElementById("lista-vazia-q1");
+export const tagListaQ1 = document.getElementById("lista-numerica-q1");
+export const tagBotaoResetarQ1 = document.getElementById("resetar-lista-q1");
+export const tagBotaoExecutarQ1 = document.getElementById("executar-q1");
+export const tagListaQ2 = document.getElementById("lista-q2");
+export const tagBotaoExecutarQ2 = document.getElementById("executar-q2");
+export const tagListaQ3 = document.getElementById("lista-q3");
+export const tagBotaoExecutarQ3 = document.getElementById("executar-q3");
+export const tagMsgQ3 = document.getElementById("msg-q3");
+export const tagBotaoExecutarQ4 = document.getElementById("executar-q4");
+export const listaNomes = ["Camila", "Raquel", "Maria", "João", "Zé"];
+export const tagBotaoExecutarQ5 = document.getElementById("executar-q5");

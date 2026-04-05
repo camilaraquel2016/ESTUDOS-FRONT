@@ -1,31 +1,4 @@
-// ------ ELEMENTOS ------
-
-// Q1
-const tagListaVaziaQ1 = document.getElementById("lista-vazia-q1");
-const tagListaQ1 = document.getElementById("lista-numerica-q1");
-const tagBotaoResetarQ1 = document.getElementById("resetar-lista-q1");
-const tagBotaoExecutarQ1 = document.getElementById("executar-q1");
-
-// Q2
-const tagListaQ2 = document.getElementById("lista-q2");
-const tagBotaoExecutarQ2 = document.getElementById("executar-q2");
-
-// Q3
-const tagListaQ3 = document.getElementById("lista-q3");
-const tagBotaoExecutarQ3 = document.getElementById("executar-q3");
-
-// Q4
-const tagBotaoExecutarQ4 = document.getElementById("executar-q4");
-const listaNomes = ["Camila", "Raquel", "Maria", "João", "Zé"];
-
-// Q5
-const tagBotaoExecutarQ5 = document.getElementById("executar-q5");
-
-
-
-// EXECUÇÃO DAS QUESTÕES
-
-// Q1
+import { tagListaVaziaQ1, tagListaQ1, tagBotaoExecutarQ1, tagBotaoExecutarQ2, tagBotaoExecutarQ3, tagBotaoExecutarQ4, tagBotaoExecutarQ5, tagBotaoResetarQ1, tagListaQ2, tagListaQ3, tagMsgQ3 } from "./dom/elementos.js";
 
 const executarQ1 = () => {
   const qtd = pedirNumeroComLimite(1, 10, "Quantos valores deseja inserir? (limite máximo = 10)");
@@ -76,7 +49,7 @@ function executarQ4() {
         return;
     }
 
-    document.getElementById("msg-q3").innerText = `Nome ${nome} encontrado com sucesso`;
+    tagMsgQ3.innerText = `Nome ${nome} encontrado com sucesso`;
 }
 
 
