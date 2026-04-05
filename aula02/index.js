@@ -1,81 +1,15 @@
-import { tagListaVaziaQ1, tagListaQ1, tagBotaoExecutarQ1, tagBotaoExecutarQ2, tagBotaoExecutarQ3, tagBotaoExecutarQ4, tagBotaoExecutarQ5, tagBotaoResetarQ1, tagListaQ2, tagListaQ3, tagMsgQ3 } from "./dom/elementos.js";
+import { tagBotaoExecutarQ1, tagBotaoExecutarQ2, tagBotaoExecutarQ3, tagBotaoExecutarQ4, tagBotaoExecutarQ5, tagBotaoResetarQ1 } from "./dom/elementos.js";
 
-import { pedirNotas, pedirNumeroComLimite, pedirNumerosDaLista } from "./input/entrada.js";
+import { executarQ1, resetarListaQ1 } from "./features/q1.js";
+import { executarQ2 } from "./features/q2.js";
+import { executarQ3 } from "./features/q3.js";
+import { executarQ4 } from "./features/q4.js";
+import { executarQ5 } from "./features/q5.js";
 
-import { renderizarLista, definirVisibilidade } from "./dom/render.js";
-
-import { calcularMedia, filtrarPares, gerarResultadosMultiplicacao, nomeEstaPresenteNaLista } from "./utils.js";
-
-const listaNomes = ["Camila", "Raquel", "João", "Cecília", "Zé"];
-
-const executarQ1 = () => {
-  const qtd = pedirNumeroComLimite(1, 10, "Quantos valores deseja inserir? (limite máximo = 10)");
-
-  const lista = pedirNumerosDaLista(qtd);
-  const listaFormatada = gerarResultadosMultiplicacao(lista, 2);
-  
-  atualizarInterfaceQ1(listaFormatada);
-}
-
-
-const executarQ2 = () => {
-    const qtd = pedirNumeroComLimite(1, 10, "Quantos números pares deseja inserir? ");
-
-    const numeros = pedirNumerosDaLista(qtd);
-    const numerosPares = filtrarPares(numeros);
-
-    if (numerosPares.length == 0) {
-        alert("Nenhum número par inserido");
-        return;
-    }
-
-    const listaFormatada = gerarResultadosMultiplicacao(numerosPares, 5);
-    renderizarLista(tagListaQ2, listaFormatada);
-}
-
-const executarQ3 = () => {
-    const itens = Array.from(tagListaQ3.querySelectorAll("li"));
-    const novoValores = itens.map(item => Number(item.textContent) * 2);
-    renderizarLista(tagListaQ3, novoValores);
-}
-
-
-const executarQ4 = () => {
-    const nome = prompt("Insira o nome que deseja procurar");
-
-    if (!nomeEstaPresenteNaLista(listaNomes, nome)) {
-        alert(`O nome ${nome} não existe na base de dados`);
-        return;
-    }
-
-    tagMsgQ3.innerText = `Nome ${nome} encontrado com sucesso`;
-}
-
-
-const executarQ5 = () => {
-    const qtdNotas = pedirNumeroComLimite(1, 10, "Insira a quantidade de notas (limite = 10)");
-    const notas = pedirNotas(qtdNotas);
-    const media = calcularMedia(notas);
-    alert(`Média é: ${media}`);
-}
-
-
-const atualizarInterfaceQ1 = (lista) =>  {
-    const temItens = lista.length > 0;
-    definirVisibilidade(tagListaVaziaQ1, !temItens);
-    definirVisibilidade(tagBotaoResetarQ1, temItens);
-    renderizarLista(tagListaQ1, lista);
-}
-
-const resetarListaQ1 = () => {
-    atualizarInterfaceQ1([]);
-}
-
-
-// EVENTOS
 tagBotaoExecutarQ1.addEventListener("click", executarQ1);
 tagBotaoExecutarQ2.addEventListener("click", executarQ2);
 tagBotaoExecutarQ3.addEventListener("click", executarQ3);
-tagBotaoResetarQ1.addEventListener("click", resetarListaQ1);
 tagBotaoExecutarQ4.addEventListener("click", executarQ4);
 tagBotaoExecutarQ5.addEventListener("click", executarQ5);
+
+tagBotaoResetarQ1.addEventListener("click", resetarListaQ1);
