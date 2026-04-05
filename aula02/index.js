@@ -4,6 +4,9 @@ import { pedirNotas, pedirNumeroComLimite, pedirNumerosDaLista } from "./input/e
 
 import { renderizarLista, definirVisibilidade } from "./dom/render.js";
 
+import { calcularMedia, filtrarPares, gerarResultadosMultiplicacao, nomeEstaPresenteNaLista } from "./utils.js";
+
+const listaNomes = ["Camila", "Raquel", "João", "Cecília", "Zé"];
 
 const executarQ1 = () => {
   const qtd = pedirNumeroComLimite(1, 10, "Quantos valores deseja inserir? (limite máximo = 10)");
@@ -14,8 +17,6 @@ const executarQ1 = () => {
   atualizarInterfaceQ1(listaFormatada);
 }
 
-
-// Q2
 
 const executarQ2 = () => {
     const qtd = pedirNumeroComLimite(1, 10, "Quantos números pares deseja inserir? ");
@@ -32,18 +33,14 @@ const executarQ2 = () => {
     renderizarLista(tagListaQ2, listaFormatada);
 }
 
-// Q3
-
-function executarQ3() {
+const executarQ3 = () => {
     const itens = Array.from(tagListaQ3.querySelectorAll("li"));
     const novoValores = itens.map(item => Number(item.textContent) * 2);
     renderizarLista(tagListaQ3, novoValores);
 }
 
 
-// Q4
-
-function executarQ4() {
+const executarQ4 = () => {
     const nome = prompt("Insira o nome que deseja procurar");
 
     if (!nomeEstaPresenteNaLista(listaNomes, nome)) {
@@ -55,34 +52,12 @@ function executarQ4() {
 }
 
 
-// Q5
-
-function executarQ5() {
+const executarQ5 = () => {
     const qtdNotas = pedirNumeroComLimite(1, 10, "Insira a quantidade de notas (limite = 10)");
     const notas = pedirNotas(qtdNotas);
     const media = calcularMedia(notas);
     alert(`Média é: ${media}`);
 }
-
-
-
-
-
-
-// UTILS Q1
-
-const gerarResultadosMultiplicacao = (listaNumeros, multiplicador) => {
-    const listaFormatada = [];
-
-    for(let i = 0; i < listaNumeros.length; i++) {
-        const valor = listaNumeros[i];
-        const saida = `${valor} x ${multiplicador} = ${valor*multiplicador}`;
-        listaFormatada.push(saida)
-    }
-
-    return listaFormatada;
-}
-
 
 
 const atualizarInterfaceQ1 = (lista) =>  {
@@ -95,50 +70,6 @@ const atualizarInterfaceQ1 = (lista) =>  {
 const resetarListaQ1 = () => {
     atualizarInterfaceQ1([]);
 }
-
-// UTILS Q2
-
-function filtrarPares(lista) {
-    const pares = [];
-
-    for (let i = 0; i < lista.length; i++) {
-        if (lista[i] % 2 == 0) {
-            pares.push(lista[i]);
-        }
-    }
-    return pares;
-}
-
-
-
-
-
-// UTILS Q4
-
-function nomeEstaPresenteNaLista(lista, nome) {
-    for (let i = 0; i < lista.length; i++) {
-        if (nome.toLowerCase() == lista[i].toLowerCase()) {
-            return true;
-        }
-    }
-
-    return false;
-}
-
-
-// UTILS Q5
-
-function calcularMedia(valores) {
-    const qtdElementos = valores.length;
-    let total = 0;
-
-    for (let i = 0; i < qtdElementos; i++) {
-        total+=valores[i];
-    }
-
-    return total / qtdElementos;
-}
-
 
 
 // EVENTOS
