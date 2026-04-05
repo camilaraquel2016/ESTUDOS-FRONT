@@ -58,7 +58,7 @@ function executarQ4() {
 function executarQ5() {
     const qtdNotas = pedirNumeroComLimite(1, 10, "Insira a quantidade de notas (limite = 10)");
     const notas = pedirNotas(qtdNotas);
-    media = calcularMedia(notas);
+    const media = calcularMedia(notas);
     alert(`Média é: ${media}`);
 }
 
