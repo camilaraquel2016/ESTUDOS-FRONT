@@ -32,12 +32,9 @@ const executarQ2 = () => {
 // Q3
 
 function executarQ3() {
-    const itens = tagListaQ3.querySelectorAll("li");
-
-    for (let i = 0; i < itens.length; i++) {
-        const valor = Number(itens[i].textContent);
-        itens[i].textContent = valor * 2;
-    }
+    const itens = Array.from(tagListaQ3.querySelectorAll("li"));
+    const novoValores = itens.map(item => Number(item.textContent) * 2);
+    renderizarLista(tagListaQ3, novoValores);
 }
 
 
