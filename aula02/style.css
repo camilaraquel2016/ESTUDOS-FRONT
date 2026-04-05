@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f08bbe;
+}
+
+header {
+    background: #dc4b94;
+    text-align: center;
+    padding: 20px;
+    border-bottom: #b41572 2px solid;
+    margin-bottom: 40px;
+}
+
+
+.container-questao {
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    width: 400px;
+    margin: auto;
+    margin-top: 30px;
+    background: #e10272;
+}
+
+section h2, section h3 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.container-lista p {
+    font-size: 40px;
+    margin: auto;
+}
+
+
+button {
+    background: #fc4aac;
+    color: rgb(244, 227, 235);
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    margin: auto;
+    display: block;
+    width: 80%;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: 0.3s;
+    border-bottom: #b41572 solid 3px;
+    font-weight: bold;
+    font-size: 15px;
+
+}
+
+button:hover {
+    background: #ff6bbf;
+    transform: scale(1.05);
+}
+
+
+.container-lista ul {
+    list-style: none;
+}
+
+.container-lista {
+    width: 200px;
+    margin: auto;
+    height: 230px;   
+    text-align: center;    
+}
+
+
+
+
+#questao3 .container-lista{
+    height: 130px;
+}
+
+
+#questao5 {
+    height: 180px;
+}
+
+#questao4 p {
+    color: white;
+    text-align: center;
+    margin-bottom: 15px;
+    height: 30px;
+}
+
+#questao1 {
+    height: 500px;
+}
+
+/* botão de resetar começa oculto */
+#resetar-lista-q1 {
+    display: none;
+}
