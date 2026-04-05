@@ -2,6 +2,9 @@ import { tagListaVaziaQ1, tagListaQ1, tagBotaoExecutarQ1, tagBotaoExecutarQ2, ta
 
 import { pedirNotas, pedirNumeroComLimite, pedirNumerosDaLista } from "./input/entrada.js";
 
+import { renderizarLista, definirVisibilidade } from "./dom/render.js";
+
+
 const executarQ1 = () => {
   const qtd = pedirNumeroComLimite(1, 10, "Quantos valores deseja inserir? (limite máximo = 10)");
 
@@ -108,16 +111,6 @@ function filtrarPares(lista) {
 
 
 
-const renderizarLista = (elementoLista, itens) => {
-    limparListaHTML(elementoLista);
-
-    for(let i = 0; i < itens.length; i++) {
-        const li = document.createElement("li");
-        li.textContent = itens[i]; 
-        elementoLista.appendChild(li);
-    }
-}
-
 
 
 // UTILS Q4
@@ -147,15 +140,6 @@ function calcularMedia(valores) {
 }
 
 
-// UTILS - GERAL
-
-const definirVisibilidade = (elemento, mostrar) => {
-    elemento.style.display = mostrar ? "block": "none";
-}
-
-const limparListaHTML = (lista) => {
-    lista.innerHTML = "";
-}
 
 // EVENTOS
 tagBotaoExecutarQ1.addEventListener("click", executarQ1);
